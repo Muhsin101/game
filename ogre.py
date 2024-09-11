@@ -1,5 +1,5 @@
 from enemy import *
-
+import random
 
 class Ogre(Enemy):
     def __init__(self, health_points, attack_damage):
@@ -10,3 +10,9 @@ class Ogre(Enemy):
 
     def spread_disease(self):
         print("The zombie is trying to spread infection.")
+
+    def special_attack(self):
+        did_special_attack_work = random.random() < 0.20
+        if did_special_attack_work:
+            self.attack_damage += 4
+            print("Ogre gets angry and increases attack by 4!")
